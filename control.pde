@@ -18,9 +18,9 @@ void Control(){
   Bslider = ctrlp5.addSlider("B").setSize(200,25).setPosition(25,300).setMax(255).setValue(0);
   slider = ctrlp5.addSlider("Size").setSize(200,25).setPosition(25,400).setMax(1.0).setValue(0.5);
   button = ctrlp5.addButton("Clear").setSize(200,25).setPosition(25,500);
-  savebutton = ctrlp5.addButton("Save").setSize(200,25).setPosition(25,535);
-  autobutton = ctrlp5.addButton("Auto").setSize(200,25).setPosition(25,570);
-  walkersbutton = ctrlp5.addToggle("Walkers").setSize(200,25).setPosition(25,605);
+  savebutton = ctrlp5.addButton("ScreenShot").setSize(200,25).setPosition(25,535);
+  autobutton = ctrlp5.addButton("AutoImage").setSize(200,25).setPosition(25,570);
+  walkersbutton = ctrlp5.addToggle("Add Walkers").setSize(200,25).setPosition(25,605);
  }
  
  public void controlEvent(ControlEvent c) {
@@ -40,9 +40,9 @@ void Control(){
     system = new ArrayList<water>();
   }
   if(c.isFrom(savebutton)) {
-    saveFrame("saved/watercolor####.png");
+      selectOutput("Select a file to write to:", "fileSelectedOUT");
   }
   if(c.isFrom(autobutton)) {
-    selectInput("Select a file to process:", "fileSelected");
+    selectInput("Select a file to process:", "fileSelectedIN");
   }
 }

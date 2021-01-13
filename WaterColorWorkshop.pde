@@ -75,7 +75,7 @@ void draw() {
   }
 }
 
-void fileSelected(File selection) {
+void fileSelectedIN(File selection) {
   if (selection == null) {
     println("Window was closed or the user hit cancel.");
   } else {
@@ -83,6 +83,15 @@ void fileSelected(File selection) {
     img = loadImage(file);
     autowater = createGraphics(img.width, img.height);
     auto=true;
+  }
+}
+
+void fileSelectedOUT(File selection) {
+  if (selection == null) {
+    println("Window was closed or the user hit cancel.");
+  } else {
+    String fileOUT = selection.getAbsolutePath();
+    saveFrame(fileOUT);
   }
 }
 
